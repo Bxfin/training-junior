@@ -1,0 +1,15 @@
+D:\repos\BlogApp\BlogApp.Data\bin\Debug\netcoreapp3.1\BlogApp.Core.dll
+D:\repos\BlogApp\BlogApp.Data\obj\Debug\netcoreapp3.1\BlogApp.Data.csprojAssemblyReference.cache
+D:\repos\BlogApp\BlogApp.Data\obj\Debug\netcoreapp3.1\BlogApp.Data.AssemblyInfoInputs.cache
+D:\repos\BlogApp\BlogApp.Data\obj\Debug\netcoreapp3.1\BlogApp.Data.AssemblyInfo.cs
+D:\repos\BlogApp\BlogApp.Data\bin\Debug\netcoreapp3.1\BlogApp.Data.deps.json
+D:\repos\BlogApp\BlogApp.Data\bin\Debug\netcoreapp3.1\BlogApp.Data.dll
+D:\repos\BlogApp\BlogApp.Data\bin\Debug\netcoreapp3.1\BlogApp.Data.pdb
+D:\repos\BlogApp\BlogApp.Data\bin\Debug\netcoreapp3.1\BlogApp.Core.pdb
+D:\repos\BlogApp\BlogApp.Data\obj\Debug\netcoreapp3.1\BlogApp.Data.csproj.CopyComplete
+D:\repos\BlogApp\BlogApp.Data\obj\Debug\netcoreapp3.1\BlogApp.Data.dll
+D:\repos\BlogApp\BlogApp.Data\obj\Debug\netcoreapp3.1\BlogApp.Data.pdb
+D:\repos\BlogApp\BlogApp.Data\obj\Debug\netcoreapp3.1\BlogApp.Data.csproj.CoreCompileInputs.cache
+D:\repos\BlogApp\BlogApp.Data\bin\Debug\netcoreapp3.1\BlogApp.Data.runtimeconfig.json
+D:\repos\BlogApp\BlogApp.Data\bin\Debug\netcoreapp3.1\BlogApp.Data.runtimeconfig.dev.json
+D:\repos\BlogApp\BlogApp.Data\obj\Debug\netcoreapp3.1\BlogApp.Data.genruntimeconfig.cache
