@@ -9,6 +9,7 @@ namespace BlogApp.Core.Contract
 {
     public interface IBlogRepository
     {
-        Task<PagedResult<Blog>> GetPagedBlogsAsync(int? page);
+        Task<PagedResult<Blog>> GetPagedAsync(BlogCriteria criteria);
+        Task<Blog> GetAsync(int id);
     }
 }

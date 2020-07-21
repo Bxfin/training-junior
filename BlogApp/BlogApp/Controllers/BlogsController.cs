@@ -1,4 +1,5 @@
 ﻿using BlogApp.Core.Contract;
+using BlogApp.Core.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -10,25 +11,24 @@ namespace BlogApp.Controllers
     [Route("api/[controller]")]
     public class BlogsController : ControllerBase
     {
-        IServiceProvider _serviceProvider;
-        public BlogsController(IServiceProvider serviceProvider)
+        private readonly IBlogRepository _blogRepository;
+        public BlogsController(IBlogRepository blogRepository)
         {
-            _serviceProvider = serviceProvider;
+            _blogRepository = blogRepository;
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get(int? page)
+        public async Task<IActionResult> GetPaged([FromQuery] BlogCriteria criteria)
         {
-            var blogRepo = _serviceProvider.GetRequiredService<IBlogRepository>();
-
-
-            var result = await blogRepo.GetPagedBlogsAsync(page);
+            var result = await _blogRepository.GetPagedAsync(criteria);
             return Ok(result);
         }
 
-        private void Test() {
-            var blogRepo = _serviceProvider.GetRequiredService<IBlogRepository>();
-
+        [HttpGet("id")]
+        public async Task<IActionResult> Get(int id)
+        {
+            var result = await _blogRepository.GetAsync(id);
+            return Ok(result);
         }
 
     }

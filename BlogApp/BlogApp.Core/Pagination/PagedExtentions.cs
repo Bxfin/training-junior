@@ -9,6 +9,7 @@ namespace BlogApp.Core.Pagination
 {
     public static class PagedExtentions
     {
+        private const int defaultPageSize = 10;
         public static PagedResult<T> GetPaged<T>(this IQueryable<T> query, int page, int pageSize) where T : class
         {
             var result = new PagedResult<T>
@@ -30,6 +31,16 @@ namespace BlogApp.Core.Pagination
 
         public static async Task<PagedResult<T>> GetPagedAsync<T>(this IQueryable<T> query, int page, int pageSize) where T : class
         {
+            if (page <= 0)
+            {
+                page = 1;
+            }
+
+            if (pageSize <= 0) 
+            {
+                pageSize = defaultPageSize;
+            }
+
             var result = new PagedResult<T>
             {
                 CurrentPage = page,

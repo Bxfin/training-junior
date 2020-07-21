@@ -1,6 +1,7 @@
 ﻿using BlogApp.Core.Contract;
 using BlogApp.Core.Model;
 using BlogApp.Core.Pagination;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,18 +13,31 @@ namespace BlogApp.Data
     public class BlogRepository : IBlogRepository
     {
         private readonly BlogDbContext _db;
-        private const int defaultPageSize = 10;
+
         public BlogRepository(BlogDbContext db)
         {
             _db = db;
         }
 
-        public async Task<PagedResult<Blog>> GetPagedBlogsAsync(int? page)
+        public async Task<PagedResult<Blog>> GetPagedAsync(BlogCriteria criteria)
         {
-            page ??= 1;
-            var query = _db.Blogs.OrderByDescending(x => x.Id);
-            var data = await query.GetPagedAsync(page.Value, defaultPageSize);
+            var query = _db.Blogs.AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(criteria.Search))
+            {
+                query = query.Where(x => x.Title.Contains(criteria.Search));
+            }
+            query = query.OrderByDescending(x => x.Id);
+
+            var data = await query.GetPagedAsync(criteria.Page, criteria.PageSize);
             return data;
         }
+
+        public async Task<Blog> GetAsync(int id)
+        {
+            var query = _db.Blogs.Where(x => x.Id == id);
+            return await query.FirstOrDefaultAsync();
+        }
+
     }
 }
