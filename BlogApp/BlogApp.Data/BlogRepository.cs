@@ -3,9 +3,7 @@ using BlogApp.Core.Model;
 using BlogApp.Core.Pagination;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace BlogApp.Data
@@ -25,8 +23,9 @@ namespace BlogApp.Data
 
             if (!string.IsNullOrWhiteSpace(criteria.Search))
             {
-                query = query.Where(x => x.Title.Contains(criteria.Search));
+                query = query.Where(x => x.Title.Contains(criteria.Search) || x.Category.Contains(criteria.Search));
             }
+
             query = query.OrderByDescending(x => x.Id);
 
             var data = await query.GetPagedAsync(criteria.Page, criteria.PageSize);
@@ -39,5 +38,37 @@ namespace BlogApp.Data
             return await query.FirstOrDefaultAsync();
         }
 
+        public async Task<int> CreateAsync(Blog entry)
+        {
+            entry.DatePosted = DateTime.Now;
+            _db.Blogs.Add(entry);
+
+            await _db.SaveChangesAsync();
+
+            return entry.Id;
+        }
+
+        public async Task<int> UpdateAsync(int id, Blog entry)
+        {
+            var dbrow = _db.Blogs.Where(x => x.Id == id).FirstOrDefault();
+            dbrow.DatePosted = DateTime.Now;
+            dbrow.Title = entry.Title;
+            dbrow.Author = entry.Author;
+            dbrow.Category = entry.Category;
+
+            await _db.SaveChangesAsync();
+
+            return id;
+        }
+
+        public async Task<int> DeleteAsync(int id)
+        {
+            var dbrow = _db.Blogs.Where(x => x.Id == id).FirstOrDefault();
+            _db.Blogs.Remove(dbrow);
+
+            await _db.SaveChangesAsync();
+
+            return id;
+        }
     }
 }
