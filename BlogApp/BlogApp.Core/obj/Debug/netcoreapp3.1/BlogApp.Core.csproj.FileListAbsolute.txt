@@ -1,8 +1,0 @@
-D:\repos\BlogApp\BlogApp.Core\bin\Debug\netcoreapp3.1\BlogApp.Core.deps.json
-D:\repos\BlogApp\BlogApp.Core\bin\Debug\netcoreapp3.1\BlogApp.Core.dll
-D:\repos\BlogApp\BlogApp.Core\bin\Debug\netcoreapp3.1\BlogApp.Core.pdb
-D:\repos\BlogApp\BlogApp.Core\obj\Debug\netcoreapp3.1\BlogApp.Core.AssemblyInfoInputs.cache
-D:\repos\BlogApp\BlogApp.Core\obj\Debug\netcoreapp3.1\BlogApp.Core.AssemblyInfo.cs
-D:\repos\BlogApp\BlogApp.Core\obj\Debug\netcoreapp3.1\BlogApp.Core.csproj.CoreCompileInputs.cache
-D:\repos\BlogApp\BlogApp.Core\obj\Debug\netcoreapp3.1\BlogApp.Core.dll
-D:\repos\BlogApp\BlogApp.Core\obj\Debug\netcoreapp3.1\BlogApp.Core.pdb
