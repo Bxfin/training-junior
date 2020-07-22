@@ -42,33 +42,30 @@ namespace BlogApp.Data
         {
             entry.DatePosted = DateTime.Now;
             _db.Blogs.Add(entry);
-
-            await _db.SaveChangesAsync();
-
             return entry.Id;
         }
 
         public async Task<int> UpdateAsync(int id, Blog entry)
         {
-            var dbrow = _db.Blogs.Where(x => x.Id == id).FirstOrDefault();
+            var dbrow = await _db.Blogs.Where(x => x.Id == id).FirstOrDefaultAsync();
             dbrow.DatePosted = DateTime.Now;
             dbrow.Title = entry.Title;
             dbrow.Author = entry.Author;
             dbrow.Category = entry.Category;
-
-            await _db.SaveChangesAsync();
-
             return id;
         }
 
         public async Task<int> DeleteAsync(int id)
         {
-            var dbrow = _db.Blogs.Where(x => x.Id == id).FirstOrDefault();
+            var dbrow = await _db.Blogs.Where(x => x.Id == id).FirstOrDefaultAsync();
             _db.Blogs.Remove(dbrow);
 
-            await _db.SaveChangesAsync();
-
             return id;
+        }
+
+        public async Task<int> SaveChangesAsync()
+        {
+            return await _db.SaveChangesAsync();
         }
     }
 }

@@ -1,5 +1,6 @@
 using BlogApp.Core.Contract;
 using BlogApp.Data;
+using BlogApp.Service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -24,6 +25,7 @@ namespace BlogApp
             services.AddDbContext<BlogDbContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<IBlogRepository, BlogRepository>();
+            services.AddScoped<IBlogService, BlogService>();
             services.AddScoped<IDbMigrator, DbMigrator>();
 
             services.AddControllers();

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BlogApp.Core.Contract
 {
-    public interface IBlogRepository : IRepository
+    public interface IBlogService
     {
         Task<PagedResult<Blog>> GetPagedAsync(BlogCriteria criteria);
         Task<Blog> GetAsync(int id);
