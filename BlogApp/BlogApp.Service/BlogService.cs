@@ -16,9 +16,9 @@ namespace BlogApp.Service
 
         public async Task<int> CreateAsync(Blog entry)
         {
-            var result = await _blogRepository.CreateAsync(entry);
+            _blogRepository.CreateAsync(entry);
             await _blogRepository.SaveChangesAsync();
-            return result;
+            return entry.Id;
         }
 
         public async Task<int> DeleteAsync(int id)

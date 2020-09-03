@@ -38,11 +38,10 @@ namespace BlogApp.Data
             return await query.FirstOrDefaultAsync();
         }
 
-        public async Task<int> CreateAsync(Blog entry)
+        public void CreateAsync(Blog entry)
         {
             entry.DatePosted = DateTime.Now;
             _db.Blogs.Add(entry);
-            return entry.Id;
         }
 
         public async Task<int> UpdateAsync(int id, Blog entry)
