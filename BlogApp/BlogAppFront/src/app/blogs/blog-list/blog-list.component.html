@@ -1,6 +1,6 @@
 <h2>Blog List</h2>
 <a routerLink="/blogs/create">[Add]</a>
-<table>
+<table class="table table-bordered">
     <thead>
         <th>Id</th>
         <th>Title</th>
@@ -24,7 +24,7 @@
                     {{scope.author}}
                 </td>
                 <td>
-                    <button type="button" (click)="delete(scope)">Delete</button>
+                    <button type="button" class="btn btn-sm" (click)="delete(scope)">Delete</button>
                 </td>
             </tr>
         </ng-container>

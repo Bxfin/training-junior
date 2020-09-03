@@ -1,7 +1,6 @@
 ﻿using BlogApp.Core.Contract;
 using BlogApp.Core.Model;
 using BlogApp.Core.Pagination;
-using System;
 using System.Threading.Tasks;
 
 namespace BlogApp.Service
