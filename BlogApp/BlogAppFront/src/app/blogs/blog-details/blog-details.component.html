@@ -1,1 +1,23 @@
-<p>blog-details works!</p>
+<h2>Blog : {{pageTitle}}</h2>
+
+<form clrForm [formGroup]="fg">
+
+    <clr-input-container>
+        <label>Title</label>
+        <input clrInput formControlName="title" />
+    </clr-input-container>
+    <clr-input-container>
+        <label>Author</label>
+        <input clrInput formControlName="author" />
+    </clr-input-container>
+    <clr-input-container>
+        <label>Category</label>
+        <input clrInput formControlName="category" />
+    </clr-input-container>
+
+    <div></div>
+
+    <button class="btn btn-primary" type="submit" (click)="submit()">Submit</button>
+    <button class="btn" type="button" (click)="resetForm()">Reset</button>
+
+</form>

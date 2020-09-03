@@ -10,6 +10,6 @@ namespace BlogApp.Core.Model
         public string Title { get; set; }
         public string Category { get; set; }
         public string Author { get; set; }
-        public DateTime DatePosted { get; set; }
+        public DateTime? DatePosted { get; set; }
     }
 }

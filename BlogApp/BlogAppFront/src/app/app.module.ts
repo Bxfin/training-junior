@@ -8,6 +8,7 @@ import { BlogListComponent } from './blogs/blog-list/blog-list.component';
 import { BlogDetailsComponent } from './blogs/blog-details/blog-details.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './home/dashboard/dashboard.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { DashboardComponent } from './home/dashboard/dashboard.component';
     DashboardComponent
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,

@@ -40,7 +40,6 @@ namespace BlogApp.Data
 
         public void CreateAsync(Blog entry)
         {
-            entry.DatePosted = DateTime.Now;
             _db.Blogs.Add(entry);
         }
 

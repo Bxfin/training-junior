@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BlogApp.Data.Migrations
 {
-    public partial class Init : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -16,7 +16,7 @@ namespace BlogApp.Data.Migrations
                     Title = table.Column<string>(nullable: true),
                     Category = table.Column<string>(nullable: true),
                     Author = table.Column<string>(nullable: true),
-                    DatePosted = table.Column<DateTime>(nullable: false)
+                    DatePosted = table.Column<DateTime>(nullable: true)
                 },
                 constraints: table =>
                 {

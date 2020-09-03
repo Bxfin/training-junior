@@ -1,6 +1,7 @@
 ﻿using BlogApp.Core.Contract;
 using BlogApp.Core.Model;
 using BlogApp.Core.Pagination;
+using System;
 using System.Threading.Tasks;
 
 namespace BlogApp.Service
@@ -15,6 +16,7 @@ namespace BlogApp.Service
 
         public async Task<int> CreateAsync(Blog entry)
         {
+            entry.DatePosted = DateTime.Now;
             _blogRepository.CreateAsync(entry);
             await _blogRepository.SaveChangesAsync();
             return entry.Id;

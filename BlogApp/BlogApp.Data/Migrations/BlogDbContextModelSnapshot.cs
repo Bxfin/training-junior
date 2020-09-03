@@ -32,7 +32,7 @@ namespace BlogApp.Data.Migrations
                     b.Property<string>("Category")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("DatePosted")
+                    b.Property<DateTime?>("DatePosted")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Title")

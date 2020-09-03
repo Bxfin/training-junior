@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlogApp.Data.Migrations
 {
     [DbContext(typeof(BlogDbContext))]
-    [Migration("20200706024413_Init")]
-    partial class Init
+    [Migration("20200903234520_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -34,7 +34,7 @@ namespace BlogApp.Data.Migrations
                     b.Property<string>("Category")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("DatePosted")
+                    b.Property<DateTime?>("DatePosted")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Title")
