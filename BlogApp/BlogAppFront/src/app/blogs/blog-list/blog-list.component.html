@@ -1,6 +1,6 @@
 <h2>Blog List</h2>
 <a routerLink="/blogs/create">[Add]</a>
-<table class="table table-bordered">
+<table class="table table-compact table-bordered">
     <thead>
         <th>Id</th>
         <th>Title</th>
@@ -15,7 +15,7 @@
                     {{scope.id}}
                 </td>
                 <td>
-                    {{scope.title}}
+                    <a [routerLink]="['/blogs', scope.id]">{{scope.title}}</a>
                 </td>
                 <td>
                     {{scope.category}}

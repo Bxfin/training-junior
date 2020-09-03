@@ -14,19 +14,19 @@ const routes: Routes = [
   {
     path: 'home',
     component: DashboardComponent
-  },  
+  },
   {
     path: 'blogs',
     component: BlogListComponent
   },
   {
-    path: 'blog/:id',
+    path: 'blogs/:id',
     component: BlogDetailsComponent
   },
   {
-    path: 'blog/create',
+    path: 'blogs/create',
     component: BlogDetailsComponent
-  }  
+  }
 ];
 
 @NgModule({
