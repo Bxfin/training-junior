@@ -28,6 +28,13 @@ namespace BlogApp
             services.AddScoped<IBlogService, BlogService>();
             services.AddScoped<IDbMigrator, DbMigrator>();
 
+            services.AddCors(o => o.AddPolicy("MyCorsPolicy", builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            }));
+
             services.AddControllers();
         }
 
@@ -38,6 +45,8 @@ namespace BlogApp
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors("MyCorsPolicy");
 
             app.UseHttpsRedirection();
 

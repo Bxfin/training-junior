@@ -1,0 +1,32 @@
+<h2>Blog List</h2>
+<a routerLink="/blogs/create">[Add]</a>
+<table>
+    <thead>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Category</th>
+        <th>Author</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let scope of model?.items">
+            <tr>
+                <td>
+                    {{scope.id}}
+                </td>
+                <td>
+                    {{scope.title}}
+                </td>
+                <td>
+                    {{scope.category}}
+                </td>
+                <td>
+                    {{scope.author}}
+                </td>
+                <td>
+                    <button type="button" (click)="delete(scope)">Delete</button>
+                </td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>
